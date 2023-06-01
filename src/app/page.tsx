@@ -24,7 +24,7 @@ interface Iproduct {
   description: string;
   price: number;
   image: string;
-  _ref: string
+  _ref: string;
 }
 
 export default async function Home() {
@@ -41,7 +41,7 @@ export default async function Home() {
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
             <div key={product._id} className="group relative">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 lg:h-80">
                 <Image
                   src={urlFor(product.image).url()}
                   alt={product._ref}
