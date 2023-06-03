@@ -12,7 +12,7 @@ function urlFor(source: string) {
 
 export const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product"]{title,description,price, image}'
+    '*[_type=="product"]{title,price, image}'
   );
 
   return res;
@@ -21,10 +21,8 @@ export const getProductData = async () => {
 interface Iproduct {
   _id: string;
   title: string;
-  description: string;
   price: number;
   image: string;
-  _ref: string;
 }
 
 export default async function Home() {
@@ -44,7 +42,7 @@ export default async function Home() {
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 lg:h-80">
                 <Image
                   src={urlFor(product.image).url()}
-                  alt={product._ref}
+                  alt={product.image}
                   width={950}
                   height={450}
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
@@ -56,9 +54,6 @@ export default async function Home() {
                     <span aria-hidden="true" className="absolute inset-0" />
                     {product.title}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {product.description}
-                  </p>
                   <p className="text-2xl  text-gray-900 mt-5 font-extrabold">
                     {product.price} Rupees
                   </p>
