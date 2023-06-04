@@ -1,18 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import imageUrlBuilder from "@sanity/image-url";
-
 import { client } from "../lib/sanityClient";
-
-const builder = imageUrlBuilder(client);
-
-function urlFor(source: string) {
-  return builder.image(source);
-}
+import { urlFoImage } from "../../sanity/lib/image";
 
 export const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product"]{title,price, image}'
+    '*[_type=="product"]{title,price, description, image, price, subject ->{name}}'
   );
 
   return res;
@@ -23,11 +16,15 @@ interface Iproduct {
   title: string;
   price: number;
   image: string;
+  description: string;
+  subject: {
+    name: string;
+  };
 }
 
 export default async function Home() {
   const data: Iproduct[] = await getProductData();
-  // console.log(data);
+  console.log(data);
 
   return (
     <div className="bg-white">
@@ -41,11 +38,11 @@ export default async function Home() {
             <div key={product._id} className="group relative">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 lg:h-80">
                 <Image
-                  src={urlFor(product.image).url()}
-                  alt={product.image}
+                  src={urlFoImage(product.image).url()}
+                  alt={product.title}
                   width={950}
                   height={450}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  className="h-full w-full object-fill lg:h-full lg:w-full"
                 />
               </div>
               <div className="mt-4 flex justify-between">
@@ -59,6 +56,9 @@ export default async function Home() {
                   </p>
                 </div>
               </div>
+              <button className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                Add To Cart
+              </button>
             </div>
           ))}
         </div>
