@@ -8,6 +8,13 @@ export const product = {
       title: "Product Title",
       type: "string",
     },
+
+    {
+      title: "slug",
+      name: "Slug",
+      type: "slug",
+      options: { source: "title" },
+    },
     {
       name: "description",
       title: "Product Description",
@@ -30,6 +37,16 @@ export const product = {
       to: [
         {
           type: "subject",
+        },
+      ],
+    },
+    {
+      name: "classes",
+      title: "Classes",
+      type: "reference",
+      to: [
+        {
+          type: "classes",
         },
       ],
     },

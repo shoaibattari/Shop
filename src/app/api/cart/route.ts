@@ -23,11 +23,14 @@ export const POST = async (request: Request) => {
   }
 
   try {
-    const res = await db.insert(cartTable).values({
-      product_id: req.product_id,
-      quantity: 1,
-      user_id: cookies().get("user_id")?.value as string,
-    }).returning();
+    const res = await db
+      .insert(cartTable)
+      .values({
+        product_id: req.product_id,
+        quantity: 1,
+        user_id: cookies().get("user_id")?.value as string,
+      })
+      .returning();
     return NextResponse.json({ res });
   } catch (error) {}
 };
