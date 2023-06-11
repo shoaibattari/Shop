@@ -3,20 +3,22 @@ import React from "react";
 import { client } from "../../lib/sanityClient";
 
 import { urlFoImage } from "../../../sanity/lib/image";
+import Link from "next/link";
 
 const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product"]{title,price, description, image, price, subject ->{name}, classes ->{name}}'
+    '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{name}}'
   );
 
   return res;
 };
 
+
 interface Iproduct {
   _id: string;
   title: string;
   price: number;
-  Slug: string
+  Slug: string;
   image: string;
   description: string;
   subject: {
@@ -40,38 +42,38 @@ export default async function Home() {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
-            <div key={product._id} className="group relative">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
-                <Image
-                  src={urlFoImage(product.image).url()}
-                  alt={product.title}
-                  width={950}
-                  height={450}
-                  className="h-full w-full lg:h-full lg:w-full"
-                />
-              </div>
-              <div
-                className="mt-4 flex justify-between md:min-h-[80px]
-              "
-              >
-                <div>
-                  <h3 className="text-md text-gray-700">
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 md:min-h-[20px]"
-                    />
-                    {product.title}
-                  </h3>
-
-                  <p className="text-2xl  text-gray-900 mt-5  font-extrabold ">
-                    {product.price} Rupees
-                  </p>
+            <Link href={`/products/${product._id}`}>
+              <div key={product.Slug} className="group relative">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
+                  <Image
+                    src={urlFoImage(product.image).url()}
+                    alt={product.title}
+                    width={950}
+                    height={450}
+                    className="h-full w-full lg:h-full lg:w-full"
+                  />
                 </div>
-              </div>
-              <button className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded w-full">
+
+                <div className="mt-4 flex justify-between md:min-h-[80px]">
+                  <div>
+                    <h3 className="text-md text-gray-700">
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 md:min-h-[20px]"
+                      />
+                      {product.title}
+                    </h3>
+
+                    <p className="text-2xl  text-gray-900 mt-5  font-extrabold ">
+                      {product.price} Rupees
+                    </p>
+                  </div>
+                </div>
+                {/* <button className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded w-full">
                 Add To Cart
-              </button>
-            </div>
+              </button> */}
+              </div>
+            </Link>
           ))}
         </div>
       </div>

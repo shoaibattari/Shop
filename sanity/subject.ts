@@ -9,6 +9,10 @@ export const subject = defineType({
       name: "Subject",
       title: "Subject",
       type: "string",
-    }),
+    }), {
+      name: "image",
+      title: "Subjects Image",
+      type: "image",
+    },
   ]
 })
