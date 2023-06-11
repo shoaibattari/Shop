@@ -2,10 +2,10 @@ import Link from "next/link";
 import React from "react";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "All Product", href: "/products", current: false },
-  { name: "Subjects", href: "/subjects", current: false },
-  { name: "Classes", href: "/classes", current: false },
+  { name: "Home", href: "/" },
+  { name: "All Product", href: "/products" },
+  { name: "Subjects", href: "/subjects" },
+  { name: "Classes", href: "/classes" },
 ];
 
 function Navbar() {
@@ -15,7 +15,9 @@ function Navbar() {
         <div className="flex items-center">
           <div className="flex-shrink-0">
             <Link href="/">
-              <p className="scroll-m-20 text-4xl font-extrabold tracking-wide lg:text-5xl">SS-BOOKS</p>
+              <p className="scroll-m-20 text-4xl font-extrabold tracking-wide lg:text-5xl">
+                SS-BOOKS
+              </p>
             </Link>
           </div>
           <div className="hidden md:block">
