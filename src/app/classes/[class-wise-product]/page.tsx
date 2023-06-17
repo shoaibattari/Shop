@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { client } from "../../lib/sanityClient";
+import { client } from "../../../lib/sanityClient";
 
-import { urlFoImage } from "../../../sanity/lib/image";
+import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
 
 const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
+    '*[_type=="product" && classes._ref== "2b047a0f-9a81-49a6-a890-9b1c02d2168b" ]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
   );
 
   return res;
@@ -30,7 +30,7 @@ interface Iproduct {
 
 export default async function Home() {
   const data: Iproduct[] = await getProductData();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="bg-white">
@@ -41,7 +41,7 @@ export default async function Home() {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
-            <Link key={product.Slug} href={`/products/${product._id}`}>
+            <Link key={product.Slug} href={`/classes/${product._id}`}>
               <div className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
                   <Image

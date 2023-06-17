@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { client } from "../../lib/sanityClient";
+import { client } from "../../../lib/sanityClient";
 
-import { urlFoImage } from "../../../sanity/lib/image";
+import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
 
 const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
+    '*[_type=="product" && subject._ref== "7420341f-9b8c-4dd7-8fb8-eb4620e77e81" ]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{Classes}}'
   );
 
   return res;
@@ -21,7 +21,7 @@ interface Iproduct {
   image: string;
   description: string;
   subject: {
-    name: string;
+    Subject : string;
   };
   classes: {
     Classes: string;
@@ -41,7 +41,7 @@ export default async function Home() {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
-            <Link key={product.Slug} href={`/products/${product._id}`}>
+            <Link key={product.Slug} href={`/subjects/${product._id}`}>
               <div className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
                   <Image

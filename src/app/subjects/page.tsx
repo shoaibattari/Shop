@@ -6,20 +6,20 @@ import { urlFoImage } from "../../../sanity/lib/image";
 import Link from "next/link";
 
 const getProductData = async () => {
-  const res = await client.fetch('*[_type=="subject"]{name,_id, image}');
+  const res = await client.fetch('*[_type=="subject"]{Subject,_id, image}');
 
   return res;
 };
 
 interface Iclasses {
-  name: string;
+  Subject: string;
   _id: string;
   image: string;
 }
 
 export default async function subject() {
   const data: Iclasses[] = await getProductData();
-  //   console.log(data);
+    console.log(data);
 
   return (
     <div className="bg-white">
@@ -31,11 +31,11 @@ export default async function subject() {
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((subject) => (
             <div key={subject._id} className="group relative">
-               <Link key={subject.name} href={`/subjects/${subject._id}`}>
+               <Link key={subject.Subject} href={`/subjects/${subject._id}`}>
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
                 <Image
                   src={urlFoImage(subject.image).url()}
-                  alt={subject.name}
+                  alt={subject.Subject}
                   width={950}
                   height={450}
                   className="h-full w-full lg:h-full lg:w-full"
