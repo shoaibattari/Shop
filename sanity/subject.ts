@@ -9,10 +9,17 @@ export const subject = defineType({
       name: "Subject",
       title: "Subject",
       type: "string",
-    }), {
+    }),
+    {
+      title: "slug",
+      name: "Slug",
+      type: "slug",
+      options: { source: "subject" },
+    },
+    {
       name: "image",
       title: "Subjects Image",
       type: "image",
     },
-  ]
-})
+  ],
+});

@@ -7,7 +7,7 @@ import { urlFoImage } from "../../../../sanity/lib/image";
 
 const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product" && _id == "3d194fdc-d6d3-4fb8-82b5-9f20bef508f0"]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{name}}'
+    '*[_type=="product" && Slug.current== "new-syllabus-primary-math-book-1"]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{name}}'
   );
 
   return res;

@@ -11,6 +11,12 @@ export const classes = defineType({
       type: "string",
     }),
     {
+      title: "slug",
+      name: "Slug",
+      type: "slug",
+      options: { source: "Classes" },
+    },
+    {
       name: "image",
       title: "Classes Image",
       type: "image",
