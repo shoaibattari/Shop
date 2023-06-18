@@ -33,7 +33,7 @@ export default async function Subjects() {
           {data.map((classes) => (
             <div key={classes._id} className="group relative">
               <Link key={classes.name} href={`/classes/${classes._id}`}>
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 sm:group-hover:scale-125 delay-105 duration-700 ease-linear ">
                   <Image
                     src={urlFoImage(classes.image).url()}
                     alt={classes.name}
