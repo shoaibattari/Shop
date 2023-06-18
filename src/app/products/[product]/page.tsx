@@ -4,7 +4,6 @@ import { client } from "../../../lib/sanityClient";
 
 import { urlFoImage } from "../../../../sanity/lib/image";
 
-
 const getProductData = async () => {
   const res = await client.fetch(
     '*[_type=="product" && Slug.current== "new-syllabus-primary-math-book-1"]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{name}}'
@@ -58,25 +57,26 @@ export default async function product() {
                   Price:
                   {product.price}
                 </p>
+                <div>
+                  <div>
+                    <p className="mt-5 text-base text-gray-600">Description:</p>
+                    <p className="text-gray-900 font-semibold italic">
+                      {product.description}
+                    </p>
+                  </div>
 
-                <div className="space-y-6">
-                  <p className="mt-5 text-base text-gray-900">
-                    Description:<br />
-                    {product.description}
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <p className="mt-5 text-lg text-gray-900">
-                    Class:  
-                    {product.classes.name}
-                  </p>
-                </div>
-                <div className="space-y-6">
-                  <p className="mt-5 text-lg text-gray-900">
-                    Subject:  
-                    {product.subject.Subject }
-                  </p>
+                  <div>
+                    <p className="mt-5 text-lg text-gray-600">Class:</p>
+                    <p className="text-gray-900 font-semibold italic">
+                      {product.classes.name}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="mt-5 text-lg text-gray-600">Subject:</p>
+                    <p className="text-gray-900 font-semibold italic">
+                      {product.subject.Subject}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
