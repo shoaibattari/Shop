@@ -4,14 +4,6 @@ import { client } from "../../../lib/sanityClient";
 
 import { urlFoImage } from "../../../../sanity/lib/image";
 
-const getProductData = async () => {
-  const res = await client.fetch(
-    '*[_type=="product" && Slug.current== "new-syllabus-primary-math-book-1"]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{name}}'
-  );
-
-  return res;
-};
-
 interface Iproduct {
   _id: string;
   title: string;
@@ -26,10 +18,23 @@ interface Iproduct {
     name: string;
   };
 }
+const getProductData = async (product: string) => {
+  const res = await client.fetch(
+    '*[_type=="product" && Slug.current==  $product]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{name}}',
+    { product }
+  );
+  // console.log(product);
 
-export default async function product() {
-  const data: Iproduct[] = await getProductData();
-  // console.log(data);
+  return res;
+};
+
+export default async function product({
+  params,
+}: {
+  params: { product: string };
+}) {
+  const data: Iproduct[] = await getProductData(params.product);
+  console.log(data);
 
   return (
     <div className="bg-white">

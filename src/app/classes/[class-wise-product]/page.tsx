@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product" && classes._ref== "2b047a0f-9a81-49a6-a890-9b1c02d2168b" ]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
+    '*[_type=="product" && classes._ref== "e1cb5466-1456-4ba0-901f-25080696224f" ]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
   );
 
   return res;
