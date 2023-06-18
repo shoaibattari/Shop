@@ -34,7 +34,7 @@ export default async function product({
   params: { product: string };
 }) {
   const data: Iproduct[] = await getProductData(params.product);
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="bg-white">

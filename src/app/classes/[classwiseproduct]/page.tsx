@@ -4,20 +4,11 @@ import { client } from "../../../lib/sanityClient";
 
 import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
-
-const getProductData = async () => {
-  const res = await client.fetch(
-    '*[_type=="product" && classes._ref== "e1cb5466-1456-4ba0-901f-25080696224f" ]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
-  );
-
-  return res;
-};
-
 interface Iproduct {
   _id: string;
   title: string;
   price: number;
-  Slug: {current:string;}
+  Slug: { current: string };
   image: string;
   description: string;
   subject: {
@@ -28,8 +19,21 @@ interface Iproduct {
   };
 }
 
-export default async function Home() {
-  const data: Iproduct[] = await getProductData();
+const getProductData = async (classwiseproduct: string) => {
+  const res = await client.fetch(
+    '*[_type=="product" && classes._ref== $classwiseproduct ]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}',
+    { classwiseproduct }
+  );
+  // console.log(classwiseproduct)
+  return res;
+};
+
+export default async function Classwiseproduct({
+  params,
+}: {
+  params: { classwiseproduct: string };
+}) {
+  const data: Iproduct[] = await getProductData(params.classwiseproduct);
   // console.log(data);
 
   return (
@@ -41,7 +45,10 @@ export default async function Home() {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
-            <Link key={product.Slug.current} href={`/products/${product.Slug.current}`}>
+            <Link
+              key={product.Slug.current}
+              href={`/products/${product.Slug.current}`}
+            >
               <div className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 ">
                   <Image
