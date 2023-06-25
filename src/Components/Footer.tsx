@@ -32,7 +32,7 @@ export default function Footer() {
               <span className=" font-extrabold text-xl">SS-BOOKS</span>
             </a>
             <p className="mt-2 text-lg text-gray-500">
-            Unlock Knowledge, Empower Minds: Your One-Stop School Bookshop!
+              Unlock Knowledge, Empower Minds: Your One-Stop School Bookshop!
             </p>
           </div>
           <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
@@ -42,10 +42,8 @@ export default function Footer() {
               </h2>
               <nav className="list-none mb-10">
                 {category.map((ele) => (
-                  
-                  <li>
+                  <li key={ele.href}>
                     <Link
-                    key={ele.name}
                       className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
                       href={ele.href}
                     >
@@ -62,9 +60,8 @@ export default function Footer() {
               </h2>
               <nav className="list-none mb-10">
                 {subjects.map((ele) => (
-                  <li>
+                  <li key={ele.href}>
                     <Link
-                    key={ele.name}
                       className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
                       href={ele.href}
                     >
@@ -80,9 +77,8 @@ export default function Footer() {
               </h2>
               <nav className="list-none mb-10">
                 {classes.map((ele) => (
-                  <li>
+                  <li key={ele.href}>
                     <Link
-                    key={ele.name}
                       className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
                       href={ele.href}
                     >
@@ -95,7 +91,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div >
+        <div>
           <div className="container mx-auto py-2 px-5 flex flex-wrap flex-col sm:flex-row">
             <p className="text-gray-500 text-sm text-center sm:text-left">
               <Link
@@ -108,7 +104,7 @@ export default function Footer() {
               </Link>
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left">
-            All rights reserved.
+              All rights reserved.
             </p>
           </div>
         </div>
