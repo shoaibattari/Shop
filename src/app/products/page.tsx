@@ -4,12 +4,13 @@ import { client } from "../../lib/sanityClient";
 
 import { urlFoImage } from "../../../sanity/lib/image";
 import Link from "next/link";
+import MultiProducts from "@/Components/MultiProducts";
 
 const getProductData = async () => {
   const res = await client.fetch(
     '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
   );
-
+  console.log(res);
   return res;
 };
 
@@ -39,40 +40,13 @@ export default async function Home() {
           ALL PRODUCTS
         </h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
             <Link
               key={product.Slug.current}
               href={`/products/${product.Slug.current}`}
             >
-              <div className="group relative">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 sm:group-hover:scale-125 delay-105 duration-700 ease-linear	 ">
-                  <Image
-                    src={urlFoImage(product.image).url()}
-                    alt={product.title}
-                    width={950}
-                    height={450}
-                    className="h-full w-full lg:h-full lg:w-full"
-                  />
-                </div>
-
-                <div className="mt-4 flex justify-between md:min-h-[80px]">
-                  <div>
-                    <h3 className="text-md text-gray-700">
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0 md:min-h-[20px]"
-                      />
-                      {product.title}
-                    </h3>
-
-                    <p className="text-2xl  text-gray-900 mt-5  font-extrabold ">
-                      {product.price} Rupees
-                    </p>
-                  </div>
-                </div>
-               
-              </div>
+              <MultiProducts product={product} />
             </Link>
           ))}
         </div>
