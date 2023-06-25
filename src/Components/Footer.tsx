@@ -42,8 +42,10 @@ export default function Footer() {
               </h2>
               <nav className="list-none mb-10">
                 {category.map((ele) => (
+                  
                   <li>
                     <Link
+                    key={ele.name}
                       className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
                       href={ele.href}
                     >
@@ -62,6 +64,7 @@ export default function Footer() {
                 {subjects.map((ele) => (
                   <li>
                     <Link
+                    key={ele.name}
                       className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
                       href={ele.href}
                     >
@@ -79,6 +82,7 @@ export default function Footer() {
                 {classes.map((ele) => (
                   <li>
                     <Link
+                    key={ele.name}
                       className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
                       href={ele.href}
                     >
