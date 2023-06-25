@@ -4,6 +4,7 @@ import { client } from "../../lib/sanityClient";
 
 import { urlFoImage } from "../../../sanity/lib/image";
 import Link from "next/link";
+import CategoryUI from "@/Components/(ui)/CategoryUI";
 
 const getProductData = async () => {
   const res = await client.fetch(
@@ -14,7 +15,7 @@ const getProductData = async () => {
 };
 
 interface Iclasses {
-  Subject: string;
+  name: string;
   _id: string;
   Slug: { current: string };
   image: string;
@@ -38,15 +39,8 @@ export default async function subject() {
                 key={subject.Slug.current}
                 href={`/subjects/${subject._id}`}
               >
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 sm:group-hover:scale-125 delay-105 duration-700 ease-linear ">
-                  <Image
-                    src={urlFoImage(subject.image).url()}
-                    alt={subject.Subject}
-                    width={950}
-                    height={450}
-                    className="h-full w-full lg:h-full lg:w-full"
-                  />
-                </div>
+                <CategoryUI category={subject}/>
+                
               </Link>
             </div>
           ))}

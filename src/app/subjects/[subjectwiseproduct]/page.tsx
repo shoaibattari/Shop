@@ -4,7 +4,7 @@ import { client } from "../../../lib/sanityClient";
 
 import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
-import MultiProducts from "@/Components/MultiProducts";
+import MultiProducts from "@/Components/(ui)/MultiProducts";
 interface Iproduct {
   _id: string;
   title: string;

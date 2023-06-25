@@ -1,16 +1,13 @@
-import Image from "next/image";
 import React from "react";
 import { client } from "../../lib/sanityClient";
-
-import { urlFoImage } from "../../../sanity/lib/image";
 import Link from "next/link";
-import MultiProducts from "@/Components/MultiProducts";
+import MultiProducts from "@/Components/(ui)/MultiProducts";
 
 const getProductData = async () => {
   const res = await client.fetch(
     '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
   );
-  console.log(res);
+  // console.log(res);
   return res;
 };
 

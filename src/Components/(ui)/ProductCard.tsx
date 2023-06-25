@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import {FC} from "react"
-import { urlFoImage } from "./../../sanity/lib/image";
+import { urlFoImage } from "../../../sanity/lib/image";
 
 
 interface Iproduct {
@@ -24,7 +24,7 @@ interface Iproduct {
 const ProductCard: FC<{product:Iproduct}> = ({ product }) => {
 
 const handleAddToCart = async () => {
-    const res = await fetch("api/cart",{
+    const res = await fetch("/api/cart",{
         method:"POST",
         body: JSON.stringify({
             product_id: product._id
@@ -78,7 +78,7 @@ const handleAddToCart = async () => {
         </div>
 
         <div>
-          <button onClick={() => handleAddToCart} className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded-3xl w-[50%]">
+          <button onClick={handleAddToCart} className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded-3xl w-[50%]">
             Add To Cart
           </button>
         </div>

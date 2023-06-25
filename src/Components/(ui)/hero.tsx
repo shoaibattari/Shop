@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Hero from "../../public/hero.jpg";
+import Hero from "../../../public/hero.jpg";
 import Link from "next/link";
 
 export default function hero() {

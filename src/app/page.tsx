@@ -1,5 +1,6 @@
 import React from "react";
-import Hero from "../Components/hero";
+import Hero from "@/Components/(ui)/hero";
+import MainHero from "@/Components/(ui)/MainHero";
 
 function page() {
   return (

@@ -1,9 +1,7 @@
-import Image from "next/image";
 import React from "react";
 import { client } from "../../../lib/sanityClient";
 
-import { urlFoImage } from "../../../../sanity/lib/image";
-import ProductCard from "@/Components/ProductCard";
+import ProductCard from "@/Components/(ui)/ProductCard";
 
 interface Iproduct {
   _id: string;
