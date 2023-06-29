@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { client } from "../../../lib/sanityClient";
+import PSlider from "../../../Components/(ui)/ProductSlider"
 
 import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
@@ -55,6 +56,7 @@ export default async function Classwiseproduct({
           ))}
         </div>
       </div>
+      <PSlider />
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default class ImagesCaurosel extends Component {
       dots: true,
       dotsClass: "slick-dots line-indicator",
       infinite: true,
-      speed: 300,
+      speed: 400,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
@@ -73,7 +73,7 @@ export default class ImagesCaurosel extends Component {
                   <Link href={val.link}>
                     <Image
                       src={val.img}
-                      className="w-full h-[300px]  md:h-[900px]  object-fill"
+                      className="w-full h-[300px]  md:h-[600px]  object-fill"
                       alt={val.title}
                     />
                   </Link>

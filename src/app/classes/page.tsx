@@ -1,7 +1,7 @@
 import React from "react";
 import { client } from "../../lib/sanityClient";
 import Link from "next/link";
-
+import PSlider from "../../Components/(ui)/ProductSlider"
 import CategoryUI from "@/Components/(ui)/CategoryUI";
 
 const getProductData = async () => {
@@ -38,6 +38,7 @@ export default async function classes() {
           ))}
         </div>
       </div>
+      <PSlider/>
     </div>
   );
 }
