@@ -9,7 +9,7 @@ import Link from "next/link";
 function Category() {
   return (
     <div>
-      <h2 className=" text-red-700 pb-2 text-3xl font-semibold tracking-wider border-b-4  first:mt-0 text-center mt-4">
+      <h2 className=" text-red-700 pb-2 text-3xl font-semibold tracking-wider border-b-4 mt-4 text-center">
         PRODUCTS DETAILS
       </h2>
 
