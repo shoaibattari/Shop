@@ -22,7 +22,7 @@ function MainHero() {
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.10 }}
               >
                 Welcome to Our SS-Bookshop
               </motion.h2>
@@ -30,7 +30,7 @@ function MainHero() {
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.10 }}
                 className="mt-4 text-lg text-gray-50"
               >
                 Unlock Knowledge, Empower Minds: Your One-Stop School Bookshop!
@@ -42,7 +42,7 @@ function MainHero() {
                   initial="hidden"
                   animate="visible"
                   variants={VARIANTS}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 1.10 }}
                   className="bg-white text-purple-800 hover:bg-blue-800 hover:text-white px-6 py-3 rounded-full shadow-lg font-medium transition-colors"
                 >
                   <Link href="/products">Browse Books</Link>
@@ -52,7 +52,7 @@ function MainHero() {
 
             <div className="">
               <Image
-                className="relative w-full max-w-xs mx-auto -mb-20 lg:-mb-28"
+                className="relative w-full max-w-xs mx-auto -mb-20 lg:-mb-28 hover:scale-105 delay-105 duration-700 ease-linear"
                 src={book}
                 alt="books  "
                 width={500}
