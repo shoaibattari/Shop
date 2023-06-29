@@ -31,13 +31,16 @@ const what = [
 function WhatWeDo() {
   return (
     <>
-      <h2 className="scroll-m-20 text-red-700 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center mt-4">
+      <h2 className=" text-red-700 pb-2 text-3xl font-semibold tracking-wider border-b-4  first:mt-0 text-center mt-4">
         WHAT WE DO
       </h2>
 
       <div className="grid-cols-1  md:grid md:grid-cols-1 lg:grid-cols-3 ">
         {what.map((ele) => (
-          <div className="max-w-[1200px] m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div
+            key={ele.id}
+            className="m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
             <Image
               className="rounded-t-lg hover:scale-105 "
               src={ele.image}
@@ -60,7 +63,7 @@ function WhatWeDo() {
               </button>
             </div>
           </div>
-        ))} 
+        ))}
       </div>
     </>
   );

@@ -50,7 +50,7 @@ function MainHero() {
               </div>
             </div>
 
-            <div className="relative px-12">
+            <div className="">
               <Image
                 className="relative w-full max-w-xs mx-auto -mb-20 lg:-mb-28"
                 src={book}

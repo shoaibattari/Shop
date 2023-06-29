@@ -1,5 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import {
+  FaFacebook,
+  FaWhatsapp,
+  FaTwitter,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
 
 const category = [
   { name: "All Products", href: "/products" },
@@ -91,21 +98,64 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
-          <div className="container mx-auto py-2 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-500 text-sm text-center sm:text-left">
-              <Link
-                href="https://github.com/shoaibattari"
-                rel="noopener noreferrer"
-                className="text-gray-600 ml-1"
-                target="_blank"
-              >
-                © 2023 Shoaib Memon —
-              </Link>
-            </p>
-            <p className="text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left">
-              All rights reserved.
-            </p>
+        <div className="sm:flex sm:items-center sm:justify-between pb-4">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 ">
+            © 2023
+            <Link
+              href="https://github.com/shoaibattari"
+              rel="noopener noreferrer"
+              className="text-gray-600 ml-1 underline"
+              target="_blank"
+            >
+              Shoaib Memon
+            </Link>
+            . All Rights Reserved.
+          </span>
+          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+            <Link
+              href="https://www.facebook.com/shoaib.attari.399"
+              rel="noopener noreferrer"
+              className=""
+              target="_blank"
+            >
+              <FaFacebook className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+            </Link>
+
+            <Link
+              href="https://wa.me/+923232579204"
+              rel="noopener noreferrer"
+              className=""
+              target="_blank"
+            >
+              <FaWhatsapp className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+            </Link>
+
+            <Link
+              href="https://twitter.com/shoaibmemon26"
+              rel="noopener noreferrer"
+              className=""
+              target="_blank"
+            >
+              <FaTwitter className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+            </Link>
+
+            <Link
+              href="https://www.linkedin.com/in/shoaib-memon26"
+              rel="noopener noreferrer"
+              className=""
+              target="_blank"
+            >
+              <FaLinkedin className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+            </Link>
+
+            <Link
+              href="https://www.youtube.com/@shoaibmemon26"
+              rel="noopener noreferrer"
+              className=""
+              target="_blank"
+            >
+              <FaYoutube className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+            </Link>
           </div>
         </div>
       </div>

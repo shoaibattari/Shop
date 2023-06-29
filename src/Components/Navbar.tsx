@@ -19,7 +19,7 @@ function Navbar() {
         <div className="flex items-center">
           <div className="flex-shrink-0">
             <Link href="/">
-              <p className="scroll-m-10 font-extrabold tracking-wide text-4xl">
+              <p className="scroll-m-10 font-extrabold tracking-wide text-4xl md:text-2xl lg:text-4xl">
                 SS-BOOKS
               </p>
             </Link>
@@ -39,7 +39,10 @@ function Navbar() {
               }`}
             >
               {navigation.map((link) => (
-                <li key={link.name} className=" md:mr-4 mr-10 text-xl md:my-0 my-7 md:px-6 lg:px-16 ">
+                <li
+                  key={link.name}
+                  className=" md:mr-4 mr-10 text-xl md:my-0 my-7 md:px-4 lg:px-10 "
+                >
                   <Link
                     href={link.href}
                     className=" bg-white z-10  text-gray-500 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2  text-md font-medium"
