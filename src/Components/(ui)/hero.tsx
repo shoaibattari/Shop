@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import book from "../../../public/book.webp";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 function MainHero() {
   const VARIANTS = {
     hidden: { opacity: 0, x: "-30vw" },
@@ -22,7 +24,7 @@ function MainHero() {
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}
-                transition={{ duration: .80 }}
+                transition={{ duration: 0.8 }}
               >
                 Welcome to Our SS-Bookshop
               </motion.h2>
@@ -30,7 +32,7 @@ function MainHero() {
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}
-                transition={{ duration: 1.00 }}
+                transition={{ duration: 1.0 }}
                 className="mt-4 text-lg text-cyan-700"
               >
                 Unlock Knowledge, Empower Minds: Your One-Stop School Bookshop!
@@ -42,15 +44,18 @@ function MainHero() {
                   initial="hidden"
                   animate="visible"
                   variants={VARIANTS}
-                  transition={{ duration: .90 }}
+                  transition={{ duration: 0.9 }}
                   className="bg-white text-cyan-700 hover:bg-blue-800 hover:text-white px-6 py-3 rounded-full shadow-lg font-medium transition-colors"
                 >
-                  <Link href="/products">Browse Books</Link>
+                  <Link href="/products">
+                    <AiOutlineShoppingCart className="text-3xl inline-block mr-2 " />
+                    Start Books Shopping
+                  </Link>
                 </motion.button>
               </div>
             </div>
 
-            <div className="">
+            <div className=" hidden md:block">
               <Image
                 className="relative w-full max-w-xs mx-auto -mb-20 lg:-mb-28 hover:scale-105 delay-105 duration-700 ease-linear"
                 src={book}

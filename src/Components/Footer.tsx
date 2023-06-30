@@ -43,7 +43,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <div className="lg:w-1/4 md:w-1/1 w-full px-4">
               <h2 className=" title-font font-bold text-gray-900 tracking-widest text-sm mb-3 underline underline-offset-4">
                 CATEGORIES
               </h2>
@@ -100,18 +100,18 @@ export default function Footer() {
 
         <div className="sm:flex sm:items-center sm:justify-between pb-4">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 ">
-            © 2023
+            ©2023
             <Link
               href="https://github.com/shoaibattari"
               rel="noopener noreferrer"
               className="text-gray-600 ml-1 underline"
               target="_blank"
             >
-              Shoaib Memon
+              Shoaib Memon 
             </Link>
-            . All Rights Reserved.
+            &nbsp;All Rights Reserved.
           </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+          <div className="flex mt-4 space-x-6 justify-center  sm:mt-0">
             <Link
               href="https://www.facebook.com/shoaib.attari.399"
               rel="noopener noreferrer"

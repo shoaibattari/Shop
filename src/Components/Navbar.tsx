@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Product", href: "/products" },
@@ -51,6 +51,11 @@ function Navbar() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <div className="bg-gray-400 rounded-full w-12 h-12 ">
+                  <AiOutlineShoppingCart className=" text-4xl cursor-pointer pt-2 ml-1" />
+                </div>
+              </li>
             </ul>
           </div>
         </div>
