@@ -4,6 +4,13 @@ import Link from "next/link";
 import PSlider from "../../Components/(ui)/ProductSlider"
 import CategoryUI from "@/Components/(ui)/CategoryUI";
 
+
+export const metadata = {
+  title: 'Class Wise Category',
+  description: 'This is page is show Classes Category ',
+}
+
+
 const getProductData = async () => {
   const res = await client.fetch('*[_type=="classes"]{name,_id, image,Slug  }');
 

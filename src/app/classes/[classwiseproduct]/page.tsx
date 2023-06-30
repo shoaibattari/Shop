@@ -6,6 +6,15 @@ import PSlider from "../../../Components/(ui)/ProductSlider"
 import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
 import MultiProducts from "@/Components/(ui)/MultiProducts";
+
+
+export const metadata = {
+  title: 'Class Wise Products',
+  description: 'This is page is show Classes Wise Products ',
+}
+
+
+
 interface Iproduct {
   _id: string;
   title: string;

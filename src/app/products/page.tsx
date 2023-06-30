@@ -3,6 +3,12 @@ import { client } from "../../lib/sanityClient";
 import Link from "next/link";
 import MultiProducts from "@/Components/(ui)/MultiProducts";
 
+
+export const metadata = {
+  title: 'All Products',
+  description: 'This is page is show all products',
+}
+
 const getProductData = async () => {
   const res = await client.fetch(
     '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'

@@ -1,10 +1,15 @@
-import Image from "next/image";
 import React from "react";
 import { client } from "../../../lib/sanityClient";
 import PSlider from "../../../Components/(ui)/ProductSlider"
-import { urlFoImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
 import MultiProducts from "@/Components/(ui)/MultiProducts";
+
+export const metadata = {
+  title: 'Subject Wise Products',
+  description: 'This is page is show single Subject Products',
+}
+
+
 interface Iproduct {
   _id: string;
   title: string;

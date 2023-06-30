@@ -89,4 +89,6 @@ const handleAddToCart = async () => {
   )
 }
 
+
+
 export default ProductCard

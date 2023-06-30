@@ -1,11 +1,15 @@
-import Image from "next/image";
 import React from "react";
 import { client } from "../../lib/sanityClient";
 import PSlider from "../../Components/(ui)/ProductSlider"
 
-import { urlFoImage } from "../../../sanity/lib/image";
 import Link from "next/link";
 import CategoryUI from "@/Components/(ui)/CategoryUI";
+
+
+export const metadata = {
+  title: 'Subjects Wise Category',
+  description: 'This is page is show All Subject Category',
+}
 
 const getProductData = async () => {
   const res = await client.fetch(

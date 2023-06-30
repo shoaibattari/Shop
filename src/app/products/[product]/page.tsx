@@ -3,6 +3,16 @@ import { client } from "../../../lib/sanityClient";
 import ProductSlider from '../../../Components/(ui)/ProductSlider'
 import ProductCard from "@/Components/(ui)/ProductCard";
 
+
+
+ export const metadata = {
+  title: 'Product description',
+  description: 'This is page is show single products',
+}
+
+
+
+  
 interface Iproduct {
   _id: string;
   title: string;
@@ -27,6 +37,8 @@ const getProductData = async (product: string) => {
   return res;
 };
 
+ 
+
 export default async function product({
   params,
 }: {
@@ -34,7 +46,7 @@ export default async function product({
 }) {
   const data: Iproduct[] = await getProductData(params.product);
   // console.log(data);
-
+ 
   return (<>
     <div className="bg-white">
       {data.map((product) => (
