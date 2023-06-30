@@ -12,17 +12,17 @@ function MainHero() {
   };
 
   return (
-    <section className="bg-blue-600 2xl:bg-white">
-      <div className="px-4 mx-auto overflow-hidden bg-blue-600 max-w-7xl sm:px-6 lg:px-8">
+    <section className=" bg-cyan-700 2xl:bg-white">
+      <div className="px-4 mx-auto overflow-hidden bg-purple-200  max-w-7xl sm:px-6 lg:px-8">
         <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
             <div>
               <motion.h2
-                className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-6xl lg:leading-tight"
+                className="text-5xl font-bold leading-tight text-cyan-700 sm:text-4xl lg:text-6xl lg:leading-tight"
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}
-                transition={{ duration: 1.10 }}
+                transition={{ duration: .80 }}
               >
                 Welcome to Our SS-Bookshop
               </motion.h2>
@@ -30,8 +30,8 @@ function MainHero() {
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}
-                transition={{ duration: 1.10 }}
-                className="mt-4 text-lg text-gray-50"
+                transition={{ duration: 1.00 }}
+                className="mt-4 text-lg text-cyan-700"
               >
                 Unlock Knowledge, Empower Minds: Your One-Stop School Bookshop!
               </motion.p>
@@ -42,8 +42,8 @@ function MainHero() {
                   initial="hidden"
                   animate="visible"
                   variants={VARIANTS}
-                  transition={{ duration: 1.10 }}
-                  className="bg-white text-purple-800 hover:bg-blue-800 hover:text-white px-6 py-3 rounded-full shadow-lg font-medium transition-colors"
+                  transition={{ duration: .90 }}
+                  className="bg-white text-cyan-700 hover:bg-blue-800 hover:text-white px-6 py-3 rounded-full shadow-lg font-medium transition-colors"
                 >
                   <Link href="/products">Browse Books</Link>
                 </motion.button>

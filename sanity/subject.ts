@@ -14,7 +14,7 @@ export const subject = defineType({
       title: "slug",
       name: "Slug",
       type: "slug",
-      options: { source: "subject" },
+      options: { source: "Subject" },
     },
     {
       name: "image",
