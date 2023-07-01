@@ -31,27 +31,29 @@ const subjects = [
 
 export default function Footer() {
   return (
-    <footer className=" bg-gray-100 text-gray-600 body-font">
+    <footer className=" bg-gray-900 text-gray-200 body-font">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-              <span className=" font-extrabold text-xl">SS-BOOKS</span>
+              <span className=" font-extrabold text-4xl text-gray-200">
+                SS-BOOKS
+              </span>
             </a>
-            <p className="mt-2 text-lg text-gray-500">
+            <p className="mt-2 text-lg text-gray-200">
               Unlock Knowledge, Empower Minds: Your One-Stop School Bookshop!
             </p>
           </div>
           <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
             <div className="lg:w-1/4 md:w-1/1 w-full px-4">
-              <h2 className=" title-font font-bold text-gray-900 tracking-widest text-sm mb-3 underline underline-offset-4">
+              <h2 className=" title-font font-bold text-gray-200 tracking-widest text-sm mb-3 underline underline-offset-4">
                 CATEGORIES
               </h2>
               <nav className="list-none mb-10">
                 {category.map((ele) => (
                   <li key={ele.href}>
                     <Link
-                      className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
+                      className="text-gray-400 hover:text-gray-200 "
                       href={ele.href}
                     >
                       {ele.name}
@@ -62,14 +64,14 @@ export default function Footer() {
             </div>
 
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-bold text-gray-900 tracking-widest text-sm mb-3 underline underline-offset-4">
+              <h2 className="title-font font-bold text-gray-200 tracking-widest text-sm mb-3 underline underline-offset-4">
                 SUBJECTS
               </h2>
               <nav className="list-none mb-10">
                 {subjects.map((ele) => (
                   <li key={ele.href}>
                     <Link
-                      className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
+                      className="text-gray-400 hover:text-gray-200 "
                       href={ele.href}
                     >
                       {ele.name}
@@ -79,14 +81,14 @@ export default function Footer() {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-bold text-gray-900 tracking-widest text-sm mb-3 underline underline-offset-4">
+              <h2 className="title-font font-bold text-gray-200 tracking-widest text-sm mb-3 underline underline-offset-4">
                 CLASSES
               </h2>
               <nav className="list-none mb-10">
                 {classes.map((ele) => (
                   <li key={ele.href}>
                     <Link
-                      className="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-2"
+                      className="text-gray-400 hover:text-gray-200 "
                       href={ele.href}
                     >
                       {ele.name}
@@ -99,15 +101,15 @@ export default function Footer() {
         </div>
 
         <div className="sm:flex sm:items-center sm:justify-between pb-4">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 ">
+          <span className="text-sm text-gray-200 sm:text-center dark:text-gray-300 ">
             ©2023
             <Link
               href="https://github.com/shoaibattari"
               rel="noopener noreferrer"
-              className="text-gray-600 ml-1 underline"
+              className="text-gray-200 ml-1 underline"
               target="_blank"
             >
-              Shoaib Memon 
+              Shoaib Memon
             </Link>
             &nbsp;All Rights Reserved.
           </span>
@@ -118,7 +120,7 @@ export default function Footer() {
               className=""
               target="_blank"
             >
-              <FaFacebook className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+              <FaFacebook className=" text-gray-400 hover:text-gray-100 text-3xl hover:text-4xl delay-105 duration-700 ease-linear " />
             </Link>
 
             <Link
@@ -127,7 +129,7 @@ export default function Footer() {
               className=""
               target="_blank"
             >
-              <FaWhatsapp className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+              <FaWhatsapp className=" text-gray-400 hover:text-gray-100 text-3xl hover:text-4xl delay-105 duration-700 ease-linear " />
             </Link>
 
             <Link
@@ -136,7 +138,7 @@ export default function Footer() {
               className=""
               target="_blank"
             >
-              <FaTwitter className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+              <FaTwitter className=" text-gray-400 hover:text-gray-100 text-3xl hover:text-4xl delay-105 duration-700 ease-linear " />
             </Link>
 
             <Link
@@ -145,7 +147,7 @@ export default function Footer() {
               className=""
               target="_blank"
             >
-              <FaLinkedin className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+              <FaLinkedin className=" text-gray-400 hover:text-gray-100 text-3xl hover:text-4xl delay-105 duration-700 ease-linear " />
             </Link>
 
             <Link
@@ -154,7 +156,7 @@ export default function Footer() {
               className=""
               target="_blank"
             >
-              <FaYoutube className=" text-gray-700 hover:text-black text-3xl hover:scale-105" />
+              <FaYoutube className=" text-gray-400 hover:text-gray-100 text-3xl hover:text-4xl delay-105 duration-700 ease-linear " />
             </Link>
           </div>
         </div>

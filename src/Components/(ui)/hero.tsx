@@ -13,7 +13,8 @@ function MainHero() {
     right: { opacity: 0, x: "30vw" },
   };
 
-  return (
+  return ( 
+   
     <section className=" bg-cyan-700 2xl:bg-white">
       <div className="px-4 mx-auto overflow-hidden bg-purple-200  max-w-7xl sm:px-6 lg:px-8">
         <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">

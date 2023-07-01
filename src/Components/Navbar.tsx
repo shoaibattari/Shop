@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="flex h-20 items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <div className="flex-shrink-0">
             <Link href="/">
               <p className="scroll-m-10 font-extrabold tracking-wide text-4xl md:text-2xl lg:text-4xl">
@@ -35,7 +35,7 @@ function Navbar() {
             <ul
               className={` z-10 md:flex md:items-center md:pb-0 pb-12 bg-white absolute md:static left-0 
               w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-                open ? "top-20 " : "top-[-490px]"
+                open ? "top-20 " : "top-[-490px] "
               }`}
             >
               {navigation.map((link) => (
@@ -52,8 +52,10 @@ function Navbar() {
                 </li>
               ))}
               <li>
-                <div className="bg-gray-400 rounded-full w-12 h-12 ">
-                  <AiOutlineShoppingCart className=" text-4xl cursor-pointer pt-2 ml-1" />
+                <div className="bg-gray-400 rounded-full w-12 h-12 hover:scale-105 delay-105 duration-700 ease-linear  ">
+                  <Link href="/cart">
+                    <AiOutlineShoppingCart className=" text-4xl cursor-pointer pt-2 ml-1 " />
+                  </Link>
                 </div>
               </li>
             </ul>
