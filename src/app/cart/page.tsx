@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
+import{ useState } from "react";
 import Image from "next/image";
 import countdown1 from "../../Components/(ui)/images/slides/countdown1.webp";
 import islamiat3 from "../../Components/(ui)/images/slides/islamiat 3.webp";
 import PSlider from "../../Components/(ui)/ProductSlider";
 import { AiOutlineDelete } from "react-icons/ai";
 
-function page() {
+function Page() {
   const [cartItems, setCartItems] = useState([
     {
       img: countdown1,
@@ -84,4 +84,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

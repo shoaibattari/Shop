@@ -25,7 +25,7 @@ function Category() {
         </div>
         <div className="lg:row-span-2 p-1  hover:scale-105 delay-105 duration-700 ease-linear ">
           <Link href="/subjects">
-            <Image src={subjects} width={400} height={200} alt="subjectsr" />
+            <Image src={subjects} width={400} height={200} alt="subject" />
           </Link>
         </div>
       </div>
