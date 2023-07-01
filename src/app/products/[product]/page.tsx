@@ -24,12 +24,12 @@ interface Iproduct {
     Subject: string;
   };
   classes: {
-    name: string;
+    Classes: string;
   };
 }
 const getProductData = async (product: string) => {
   const res = await client.fetch(
-    '*[_type=="product" && Slug.current==  $product]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{name}}',
+    '*[_type=="product" && Slug.current==  $product]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{Classes}}',
     { product }
   );
   // console.log(product);

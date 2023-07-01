@@ -69,7 +69,7 @@ function page() {
             </div>
             <div className="grid grid-cols-2 border-b-2 border-gray-300 p-4">
               <p className="text-2xl ">Subtotal: </p>
-              <p className="text-2xl text-right "></p>
+              <p className="text-2xl text-right ">0</p>
             </div>
             <button className="mt-12 bg-blue-200 w-full rounded-full  text-cyan-900 hover:bg-blue-800 hover:text-white p-3  shadow-lg font-medium transition-colors">
               Proceed to checkout

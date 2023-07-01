@@ -11,7 +11,7 @@ export const metadata = {
 
 const getProductData = async () => {
   const res = await client.fetch(
-    '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{name}, classes ->{Classes}}'
+    '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{Classes}}'
   );
   // console.log(res);
   return res;
@@ -25,7 +25,7 @@ interface Iproduct {
   image: string;
   description: string;
   subject: {
-    name: string;
+    Subject: string;
   };
   classes: {
     Classes: string;

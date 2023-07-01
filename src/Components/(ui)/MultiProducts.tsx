@@ -13,7 +13,7 @@ interface Iproduct {
     image: string;
     description: string;
     subject: {
-      name: string;
+      Subject: string;
     };
     classes: {
       Classes: string;

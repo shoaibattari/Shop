@@ -12,13 +12,13 @@ export const metadata = {
 
 
 const getProductData = async () => {
-  const res = await client.fetch('*[_type=="classes"]{name,_id, image,Slug  }');
+  const res = await client.fetch('*[_type=="classes"]{Classes,_id, image,Slug  }');
 
   return res;
 };
 
 interface Iclasses {
-  name: string;
+  Classes: string;
   _id: string;
   Slug: { current: string };
   image: string;
@@ -38,7 +38,7 @@ export default async function classes() {
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((classes) => (
             <div key={classes._id} className="group relative">
-              <Link key={classes.name} href={`/classes/${classes._id}`}>
+              <Link key={classes.Classes} href={`/classes/${classes._id}`}>
                 <CategoryUI category={classes} />
               </Link>
             </div>

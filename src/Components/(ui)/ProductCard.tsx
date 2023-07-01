@@ -15,7 +15,7 @@ interface Iproduct {
       Subject: string;
     };
     classes: {
-      name: string;
+      Classes: string;
     };
   }
 
@@ -67,7 +67,7 @@ const handleAddToCart = async () => {
         <div>
           <p className="mt-5 text-lg text-gray-600">Class:</p>
           <p className="text-gray-900 font-semibold italic">
-            {product.classes.name}
+            {product.classes.Classes}
           </p>
         </div>
         <div>
