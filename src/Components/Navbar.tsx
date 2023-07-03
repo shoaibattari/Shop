@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
@@ -19,7 +20,7 @@ function Navbar() {
         <div className="flex items-center ">
           <div className="flex-shrink-0">
             <Link href="/">
-              <p className="scroll-m-10 font-extrabold tracking-wide text-4xl md:text-2xl lg:text-4xl">
+              <p className="scroll-m-10 font-extrabold tracking-wide text-2xl md:text-2xl lg:text-4xl">
                 SS-BOOKS
               </p>
             </Link>
@@ -27,7 +28,7 @@ function Navbar() {
           <div>
             <div
               onClick={() => setOpen(!open)}
-              className="text-4xl absolute right-8 top-6 cursor-pointer md:hidden"
+              className= " text-3xl md:text-4xl absolute right-8 top-6 cursor-pointer md:hidden"
             >
               <GiHamburgerMenu name={open ? "close" : "menu"}></GiHamburgerMenu>
             </div>

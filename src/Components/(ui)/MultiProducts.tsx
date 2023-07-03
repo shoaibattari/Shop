@@ -24,7 +24,7 @@ interface Iproduct {
   return (
     <>
       <div className="group relative">
-        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 sm:group-hover:scale-125 delay-105 duration-700 ease-linear	 ">
+        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 sm:group-hover:scale-125 delay-105 duration-500 ease-linear	 ">
           <Image
             src={urlFoImage(product.image).url()}
             alt={product.title}

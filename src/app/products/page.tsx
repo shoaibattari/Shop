@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import { client } from "../../lib/sanityClient";
 import Link from "next/link";
 import MultiProducts from "@/Components/(ui)/MultiProducts";
@@ -12,7 +12,7 @@ export const metadata = {
 const getProductData = async () => {
   const res = await client.fetch(
     '*[_type=="product"]{title,price, Slug, _id, description, image, price, subject ->{Subject}, classes ->{Classes}}'
-  );
+  ); 
   // console.log(res);
   return res;
 };

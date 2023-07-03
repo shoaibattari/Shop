@@ -20,7 +20,7 @@ const getProductData = async () => {
 };
 
 interface Iclasses {
-  name: string;
+  Classes: string;
   _id: string;
   Slug: { current: string };
   image: string;

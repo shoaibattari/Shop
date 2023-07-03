@@ -21,7 +21,7 @@ function MainHero() {
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
             <div>
               <motion.h2
-                className="text-5xl font-bold leading-tight text-cyan-700 sm:text-4xl lg:text-6xl lg:leading-tight"
+                className="text-4xl font-bold leading-tight text-cyan-700 sm:text-4xl lg:text-6xl lg:leading-tight"
                 initial="hidden"
                 animate="visible"
                 variants={VARIANTS}

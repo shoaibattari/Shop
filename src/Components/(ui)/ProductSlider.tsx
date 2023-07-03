@@ -102,12 +102,12 @@ export default class ImagesCaurosel extends Component {
           PRODUCTS
         </h2>
 
-        <div className="mt-20 w-full">
+        <div className="mt-20 w-full ">
           <Slider {...settings} className="w-full">
             {data.map((val, index) => {
               return (
                 <div
-                  className="px-3 xl-lg:px-1 group mb-2 md:mb-5  relative overflow-hidden cursor-pointer outline-none"
+                  className="px-3 xl-lg:px-1 group mb-2 md:mb-5  relative overflow-hidden cursor-pointer outline-none "
                   key={val.title}
                 >
                   <div className="relative bg-slate-900 rounded-lg   overflow-hidden">

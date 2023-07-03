@@ -1,27 +1,29 @@
 "use client";
-import{ useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import countdown1 from "../../Components/(ui)/images/slides/countdown1.webp";
-import islamiat3 from "../../Components/(ui)/images/slides/islamiat 3.webp";
 import PSlider from "../../Components/(ui)/ProductSlider";
 import { AiOutlineDelete } from "react-icons/ai";
+
+
+
+
+
+
+
+
+
 
 function Page() {
   const [cartItems, setCartItems] = useState([
     {
       img: countdown1,
       title: "New Countdown Book 1 (3rd Edition)",
-      link: "/products/new-countdown-book-1-3rd-edition",
+      link: "/products/new-countdown-book-1-3rd-edition", 
       price: 795,
       subject: "Mathematics",
     },
-    {
-      img: islamiat3,
-      title: "islamiat book 3",
-      link: "/products/islamiat-book-3",
-      price: 525,
-      subject: "Islamiat",
-    },
+    
   ]);
 
   const [subtotal, setSubtotal] = useState(0);
@@ -45,9 +47,13 @@ function Page() {
                     />
                   </div>
                   <div className=" col-span-3 p-2">
-                    <p className="text-2xl font-semibold m-2">{p.title}</p>
-                    <p className="text-1xl m-2">{p.subject}</p>
-                    <p className="text-2xl font-bold m-2">{p.price}</p>
+                    <p className=" text-sm md:text-2xl font-semibold m-2">
+                      {p.title}
+                    </p>
+                    <p className="text-sm  md:text-1xl m-2">{p.subject}</p>
+                    <p className=" text-md md:text-2xl font-bold m-2">
+                      {p.price}
+                    </p>
                   </div>
                   <div className="p-5">
                     <p>
@@ -58,18 +64,20 @@ function Page() {
               ))}
             </div>
           </div>
-          <div className="bg-gray-50 rounded-3xl p-3 w-[595px] md:w-auto m-10 ">
+          <div className="bg-gray-50 rounded-3xl p-3 sm:w-[595px] md:w-auto m-10 ">
             <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-bold tracking-tight transition-colors first:mt-0 p-5 ">
               Order Summary
             </h2>
 
             <div className="grid grid-cols-2 border-b-2 border-gray-300 p-4">
-              <p className="text-2xl ">Quantity:</p>
-              <p className="text-2xl text-right ">{cartItems.length} product</p>
+              <p className="text-md lg:text-2xl ">Quantity:</p>
+              <p className="text-md lg:text-2xl text-right ">
+                {cartItems.length} product
+              </p>
             </div>
             <div className="grid grid-cols-2 border-b-2 border-gray-300 p-4">
-              <p className="text-2xl ">Subtotal: </p>
-              <p className="text-2xl text-right ">0</p>
+              <p className="text-md lg:text-2xl ">Subtotal: </p>
+              <p className="text-md lg:text-2xl text-right ">{cartItems[0].price}</p>
             </div>
             <button className="mt-12 bg-blue-200 w-full rounded-full  text-cyan-900 hover:bg-blue-800 hover:text-white p-3  shadow-lg font-medium transition-colors">
               Proceed to checkout

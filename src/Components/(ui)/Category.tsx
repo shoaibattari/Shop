@@ -13,17 +13,17 @@ function Category() {
       </h2>
 
       <div className="grid lg:grid-rows-2 mt-4 sm:grid-flow-col  items-center ">
-        <div className=" row-span-2 p-5 hover:scale-105 delay-105 duration-700 ease-linear ">
+        <div className=" row-span-2 p-5 hover:scale-105 delay-105 duration-500 ease-linear ">
           <Link href="/products">
             <Image src={All} width={400} height={200} alt="products" />
           </Link>
         </div>
-        <div className="lg:row-span-1 p-1    hover:scale-105 delay-105 duration-700 ease-linear">
+        <div className="lg:row-span-1 p-1    hover:scale-105 delay-105 duration-500 ease-linear">
           <Link href="/classes">
             <Image src={classes} width={400} height={200} alt="classes" />
           </Link>
         </div>
-        <div className="lg:row-span-2 p-1  hover:scale-105 delay-105 duration-700 ease-linear ">
+        <div className="lg:row-span-2 p-1  hover:scale-105 delay-105 duration-500 ease-linear ">
           <Link href="/subjects">
             <Image src={subjects} width={400} height={200} alt="subject" />
           </Link>

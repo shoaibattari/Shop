@@ -40,7 +40,7 @@ const handleAddToCart = async () => {
       <Image
         src={urlFoImage(product.image).url()}
         alt={product.title}
-        className="h-full w-full object-cover object-center hover:scale-105 sm:hover:scale-125 delay-105 duration-700 ease-linear"
+        className="h-full w-full object-cover object-center hover:scale-105 sm:hover:scale-125 delay-105 duration-500 ease-linear"
         width={500}
         height={200}
       />
