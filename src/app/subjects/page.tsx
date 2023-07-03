@@ -55,3 +55,4 @@ export default async function subject() {
     </div>
   );
 }
+export const revalidate = 10; 

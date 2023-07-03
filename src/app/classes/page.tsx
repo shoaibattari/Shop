@@ -49,3 +49,5 @@ export default async function classes() {
     </div>
   );
 }
+
+export const revalidate = 10; 
