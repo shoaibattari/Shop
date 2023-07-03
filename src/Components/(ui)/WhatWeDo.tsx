@@ -42,7 +42,7 @@ function WhatWeDo() {
             className="m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
             <Image
-              className="rounded-t-lg hover:scale-105 delay-105 duration-700 ease-linear "
+              className="rounded-t-lg hover:scale-105 delay-105 duration-500 ease-linear "
               src={ele.image}
               alt={ele.imageAlt}
               width={700}
