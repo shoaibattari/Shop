@@ -114,7 +114,7 @@ export default class ImagesCaurosel extends Component {
                     <Link href={val.link}>
                       <Image
                         src={val.img}
-                        className=" w-full  h-[175px] md:h-[305px] lg:h-[290px] object-bottom hover:scale-105 delay-105 duration-700 ease-linear"
+                        className=" w-full  h-[175px] md:h-[305px] lg:h-[290px] object-bottom hover:scale-105 delay-105 duration-500 ease-linear"
                         alt={val.title}
                       />
                     </Link>
