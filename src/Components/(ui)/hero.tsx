@@ -3,20 +3,19 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import book from "../../../public/book.webp";
+import book from "../../../public/book.png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function MainHero() {
   const VARIANTS = {
     hidden: { opacity: 0, x: "-30vw" },
     visible: { opacity: 1, x: 0 },
-    right: { opacity: 0, x: "30vw" },
+    left: { opacity: 0, x: "30vw" },
   };
 
-  return ( 
-   
+  return (
     <section className=" bg-cyan-700 2xl:bg-white">
-      <div className="px-4 mx-auto overflow-hidden bg-purple-200  max-w-7xl sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto overflow-hidden bg-purple-200  max-w-7xl sm:px-6 lg:px-8 rounded-t-[220px]">
         <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
             <div>
@@ -58,11 +57,11 @@ function MainHero() {
 
             <div className=" hidden md:block">
               <Image
-                className="relative w-full max-w-xs mx-auto -mb-20 lg:-mb-28 hover:scale-105 delay-105 duration-700 ease-linear"
+                className="relative w-full max-w-xs mx-auto -mb-20 lg:-mb-28 hover:scale-125 delay-105 duration-500 ease-linear"
                 src={book}
-                alt="books  "
+                alt="books"
                 width={500}
-                height={750}
+                height={150}
               />
             </div>
           </div>
