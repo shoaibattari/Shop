@@ -15,7 +15,7 @@ function MainHero() {
 
   return (
     <section className=" bg-cyan-700 2xl:bg-white">
-      <div className="px-4 mx-auto overflow-hidden bg-purple-200  max-w-7xl sm:px-6 lg:px-8 rounded-t-[220px]">
+      <div className="px-4 mx-auto overflow-hidden bg-purple-200  max-w-7xl sm:px-6 lg:px-8 rounded-3xl">
         <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
             <div>

@@ -4,29 +4,32 @@ import Image from "next/image";
 import countdown1 from "../../Components/(ui)/images/slides/countdown1.webp";
 import PSlider from "../../Components/(ui)/ProductSlider";
 import { AiOutlineDelete } from "react-icons/ai";
+import { cookies } from "next/dist/client/components/headers";
 
+// async function getData() {
+//   const userID = cookies().get("user_id")?.value;
+//   const res = await fetch(`/api/cart?user_id=${userID}`);
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
+//   return res.json();
+// }
 
+export default async function Home() {
+  // const cartData = await getData();
 
-
-
-
-
-
-
-function Page() {
   const [cartItems, setCartItems] = useState([
     {
       img: countdown1,
       title: "New Countdown Book 1 (3rd Edition)",
-      link: "/products/new-countdown-book-1-3rd-edition", 
+      link: "/products/new-countdown-book-1-3rd-edition",
       price: 795,
       subject: "Mathematics",
     },
-    
   ]);
 
-  const [subtotal, setSubtotal] = useState(0);
+  //   const [subtotal, setSubtotal] = useState(0);
   return (
     <>
       <div>
@@ -77,7 +80,9 @@ function Page() {
             </div>
             <div className="grid grid-cols-2 border-b-2 border-gray-300 p-4">
               <p className="text-md lg:text-2xl ">Subtotal: </p>
-              <p className="text-md lg:text-2xl text-right ">{cartItems[0].price}</p>
+              <p className="text-md lg:text-2xl text-right ">
+                {cartItems[0].price}
+              </p>
             </div>
             <button className="mt-12 bg-blue-200 w-full rounded-full  text-cyan-900 hover:bg-blue-800 hover:text-white p-3  shadow-lg font-medium transition-colors">
               Proceed to checkout
@@ -91,5 +96,3 @@ function Page() {
     </>
   );
 }
-
-export default Page;
